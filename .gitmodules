@@ -1,0 +1,3 @@
+[submodule "tp-link-php-library"]
+	path = tp-link-php-library
+	url = git@github.com:ryanhellyer/tp-link-php-library.git
