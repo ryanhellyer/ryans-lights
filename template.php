@@ -54,7 +54,7 @@ foreach ( $devices as $device ) {
 		$state = 'on';
 	}
 
-	echo '<li class="' . esc_attr( 'state-' . $state ) . '"><a href="' . esc_attr( '/?device_id=' . $device_id . '&state=' . $state ) . '">' . esc_html( $alias ) . '</a></li>';
+	echo '<li class="' . esc_attr( 'state-' . $state ) . '"><a href="' . esc_attr( '/lights/?device_id=' . $device_id . '&state=' . $state ) . '">' . esc_html( $alias ) . '</a></li>';
 }
 
 ?></ul>

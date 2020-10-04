@@ -10,10 +10,10 @@ error_reporting( E_ALL );
 /**
  * Load files.
  */
-require( '../config.php' );
-require( '../caching-layer.php' );
-require( '../escaping.php' );
-require('../tp-link-php-library/index.php' );
+require( 'config.php' );
+require( 'caching-layer.php' );
+//require( 'escaping.php' );
+require( 'tp-link-php-library/index.php' );
 
 $tp_link = new TP_Link_API( $username, $password, get_cache( 'token' ), get_cache( 'devices' ) );
 
@@ -66,7 +66,8 @@ if ( isset( $weather['weather'][0]['description'] ) && isset( $weather['main']['
  */
 $joke = get_cache( 'joke' );
 if ( null === $joke ) {
-	$response = file_get_contents( 'https://sv443.net/jokeapi/v2/joke/Dark' );
+//	$response = file_get_contents( 'https://sv443.net/jokeapi/v2/joke/Dark' );
+	$response = file_get_contents( 'https://sv443.net/jokeapi/v2/joke/Pun' );
 	$joke_data = json_decode( $response, true );
 	if ( isset( $joke_data['joke'] ) ) {
 		$joke = $joke_data['joke'];
@@ -84,4 +85,4 @@ if ( null === $joke ) {
 /**
  * Load the template.
  */
-require( '../template.php' );
+require( 'template.php' );

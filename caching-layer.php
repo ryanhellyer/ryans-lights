@@ -7,7 +7,8 @@
  * @return array|string The cache result.
  */
 function get_cache( $key ) {
-	$data = file_get_contents( '../cache/' . $key . '.txt' );
+
+	$data = file_get_contents( dirname( __FILE__ ) . '/cache/' . $key . '.txt' );
 	$data = explode( '|', $data );
 	if ( isset( $data[0] ) && isset( $data[1] ) && isset( $data[2] ) ) {
 		$last_time = $data[0];
@@ -41,5 +42,5 @@ function update_cache( $key, $data, $expiry ) {
 		$data = json_encode( $data );
 	}
 
-	file_put_contents( '../cache/' . $key . '.txt', time() . '|' . $data . '|' . $expiry );
+	file_put_contents( dirname( __FILE__ ) . '/cache/' . $key . '.txt', time() . '|' . $data . '|' . $expiry );
 }
