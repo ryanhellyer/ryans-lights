@@ -1,2 +1,5 @@
 config.php
 cache/*
+cache/
+cache
+cache/weather.txt
